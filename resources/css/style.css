@@ -1,0 +1,287 @@
+
+html {
+  font-size: 18px;
+  font-family: Helvetica;
+  line-height: 1.4;
+}
+
+.site-container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-container {
+  display: flex;
+}
+
+
+/* Banner section */
+
+.banner-container {
+  background-image: url("../images/glasses-bg.png");
+  /*background-position: center;*/
+  /*background-attachment: scroll;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 31rem;
+  /* adding a margin-top to banner-content pushed parent down, did not work */
+  align-items: flex-end;
+}
+
+.banner-content {
+  height: 30rem;
+}
+
+header {
+  background-color: cadetblue;
+  height: 3rem;
+  align-items: center;
+  color: white;
+}
+
+header .logo {
+  /* the logo container eats all the space to the right, pushing nav to right */
+  flex-grow: 1;
+  align-items: center;
+}
+
+header .logo img {
+  height: 1.5rem;
+  margin: 0rem 1rem 0rem 2rem;
+}
+
+header nav span a {
+  margin-right: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.banner-message {
+  margin-top: 10rem;
+  padding: 1.5rem 5rem;
+  background-color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.2;
+  /* couldnt figure out how to override the inherited width of site-container */
+  width: 44.65%;
+  position: relative;
+  /* couldnt figure out how to right justify this box without refactoring above */
+  left: 21.5rem;
+}
+
+
+/* Main page content */
+
+.main-content {
+  flex-direction: column;
+}
+
+
+/* Icons section */
+
+.icons-container {
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+.icon-container {
+  width: 5rem;
+  height: 8rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0rem 3rem;
+}
+
+#left-icon {
+  width: 3.5rem;
+}
+
+#middle-icon, #right-icon {
+  width: 5rem;
+}
+
+
+/* Philosophy and Appointments section */
+
+.philosophy-appt-container {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.philosophy-container, .appt-container {
+  flex-direction: column;
+  width: 35%;
+}
+
+.philosophy-container {
+  margin-right: 5%;
+}
+
+.philosophy-appt-container .header {
+  background-color: cadetblue;
+  width: 10rem;
+  padding: 0.5rem 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+
+/* Footer section */
+
+footer {
+  background-color: azure;
+  height: 9rem;
+}
+
+footer .logo {
+  margin: 4rem;
+  align-items: center;
+}
+
+footer .logo img {
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+#mobile-footer {
+  display: none;
+}
+
+
+/* Media queries for standard device sizes */
+
+/* iPad */
+
+@media only screen and (max-width: 1024px) and (min-width: 480px){
+
+  html {
+    /*display: none;*/
+  }
+
+  .site-container {
+    width: 100%;
+  }
+
+
+  /* Banner section */
+
+  .banner-container {
+    height: 22rem;
+    /*background-size: cover;*/
+    background-size: auto 100%;
+    background-position: 42%;
+  }
+
+  .banner-content {
+    height: 22rem;
+    margin-top: 0rem;
+  }
+
+  .banner-message {
+    margin-top: 5rem;
+    padding: 0.75rem 4rem;
+    width: 40%;
+    font-size: 1.33rem;
+    left: 14rem;
+    /*text-align: right;*/
+  }
+
+  .philosophy-appt-container {
+    margin-left: 4rem;
+  }
+
+  #mobile-footer {
+    display: none;
+  }
+
+}
+
+
+/* iPhone */
+
+@media only screen and (max-width: 480px) {
+
+  html {
+    /*display: none;*/
+  }
+
+  .site-container {
+    width: 100%;
+  }
+
+
+  /* Banner section */
+
+  .banner-container {
+    background-position: 20%;
+    height: 17rem;
+  }
+
+  .banner-content {
+    height: 17rem;
+  }
+
+  .banner-message {
+    width: 100%;
+    margin-top: 9rem;
+    padding: 1rem 0rem;
+    text-align: center;
+    position: static;
+  }
+
+
+  /* Main section */
+
+  /* Icons section */
+
+  .icons-container {
+    margin-top: 3.77rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon-container {
+    margin-bottom: 1.54rem;
+  }
+
+
+  /* Philosophy and Appointment section */
+
+  .philosophy-appt-container {
+    margin: 3.77rem 0rem 4rem 0rem;
+    flex-direction: column;
+    font-size: 0.77rem;
+  }
+
+  .philosophy-appt-container .header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .philosophy-container, .appt-container {
+    width: 100%;
+  }
+
+  .philosophy-container {
+    margin-bottom: 4rem;
+  }
+
+
+  /* Footer */
+
+  #footer {
+    display: none;
+  }
+
+  #mobile-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
